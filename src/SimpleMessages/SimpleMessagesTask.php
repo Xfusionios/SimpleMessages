@@ -21,6 +21,7 @@ class SimpleMessagesTask extends PluginTask{
 
     public function onRun($currentTick){
         $this->getOwner();
+        $this->owner->getConfig()->reload();
         $this->plugin->configFile = $this->owner->getConfig()->getAll();
         $messages = $this->plugin->configFile["messages"];
         $messagekey = array_rand($messages, 1);
